@@ -18,7 +18,6 @@ import org.xml.sax.SAXException;
  */
 public class LowLevelParser {
     public String parse(String xml, String element){
-        String result = "";
         ByteArrayInputStream bais = new ByteArrayInputStream(xml.getBytes());
         DocumentBuilderFactory fact = DocumentBuilderFactory.newInstance();
         
@@ -33,12 +32,12 @@ public class LowLevelParser {
                 for (int j = 0; j < nodes.getLength(); j++) {
                     Node child = nodes.item(j);
                     if (child.getNodeType() == Node.TEXT_NODE)
-                        result = child.getNodeValue();
+                        return child.getNodeValue();
                 }
             }
         } catch (ParserConfigurationException | SAXException | IOException ex) {
             Logger.getLogger(LowLevelParser.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return result;
+        return null;
     }
 }
