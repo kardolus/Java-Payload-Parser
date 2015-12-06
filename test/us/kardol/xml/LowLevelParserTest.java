@@ -39,7 +39,7 @@ public class LowLevelParserTest {
      */
     @Test
     public void testParse() {
-        System.out.print("parse");
+        System.out.println("parse");
         // Copied mock response from Amazon
         String xml =   "<Item>\n" +
                             "  <ASIN>076243631X</ASIN>\n" +
@@ -65,8 +65,21 @@ public class LowLevelParserTest {
                             "    <Title>The Mammoth Book of Tattoos</Title>\n" +
                             "  </ItemAttributes>\n" +
                             "</Item>";
+        System.out.print("Test 1. ");
         assertEquals(llp.parse(xml, "Author"), "Lal Hardy");
         System.out.println(" ... ok");
+        System.out.print("Test 2. ");
+        assertEquals(llp.parse(xml, "PublicationDate"), "2009-03-10");
+        System.out.println(" ... ok");
+        System.out.print("Test 3. ");
+        assertEquals(llp.parse(xml, "NumberOfPages"), "512");
+        System.out.println(" ... ok");
+        System.out.print("Test 4. ");
+        assertEquals(llp.parse(xml, "DeweyDecimalNumber"), "391.65");
+        System.out.println(" ... ok");
+        System.out.print("Test 5. ");
+        assertEquals(llp.parse(xml, "studio"), null); // case sensitive 
+        System.out.println(" ... ok"); 
     }
     
 }
