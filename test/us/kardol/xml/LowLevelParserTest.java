@@ -39,7 +39,7 @@ public class LowLevelParserTest {
      */
     @Test
     public void testParse() {
-        System.out.println("parse");
+        System.out.println("Testing LowLevelParser.parse()");
         // Copied mock response from Amazon
         String xml =   "<Item>\n" +
                             "  <ASIN>076243631X</ASIN>\n" +
