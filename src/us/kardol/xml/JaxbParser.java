@@ -17,6 +17,9 @@ import org.xml.sax.InputSource;
  * @author Guillermo Kardolus
  * This class uses unmarshalling to parse an XML element from a given string. 
  * Then as a test, it finds the author from the provided xml.
+ * 
+ * Amazon classes created with: 
+ *  xjc -p AWSECommerceService AWSECommerceService.xsd.xml
  */
 public class JaxbParser {
     public String getAuthor(InputSource xml){
