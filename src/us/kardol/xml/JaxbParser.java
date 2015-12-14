@@ -29,12 +29,12 @@ public class JaxbParser {
             ItemLookupResponse response = (ItemLookupResponse) um.unmarshal(xml);
             List<Items> itemsList = response.getItems(); // list of lists                
             for (Items items : itemsList) {         // outer list                   
-              List<Item> list = items.getItem();  // inner list                     
-              for (Item item : list) {            // items in inner list
-                ItemAttributes attributes = item.getItemAttributes();
-                List<String> authors = attributes.getAuthor(); // could be several
-                return authors.get(0); // Get the first author                
-              }
+                List<Item> list = items.getItem();  // inner list                     
+                for (Item item : list) {            // items in inner list
+                    ItemAttributes attributes = item.getItemAttributes();
+                    List<String> authors = attributes.getAuthor(); // could be several
+                    return authors.get(0); // Get the first author                
+                }
             }
         } catch (JAXBException ex) {
             Logger.getLogger(JaxbParser.class.getName()).log(Level.SEVERE, null, ex);
