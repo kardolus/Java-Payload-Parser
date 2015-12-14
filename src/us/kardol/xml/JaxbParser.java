@@ -4,7 +4,6 @@ import AWSECommerceService.Item;
 import AWSECommerceService.ItemAttributes;
 import AWSECommerceService.ItemLookupResponse;
 import AWSECommerceService.Items;
-import java.io.StringReader;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
