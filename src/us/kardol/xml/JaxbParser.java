@@ -15,10 +15,10 @@ import org.xml.sax.InputSource;
 
 /**
  * @author Guillermo Kardolus
- * This class uses unmarshalling to parse an XML element from a given string. 
+ * This class uses unmarshalling to parse an XML response. 
  * Then as a test, it finds the author from the provided xml.
  * 
- * Amazon classes created with: 
+ * Amazon classes in the AWSECommerceService package were created with: 
  *  xjc -p AWSECommerceService AWSECommerceService.xsd.xml
  */
 public class JaxbParser {
